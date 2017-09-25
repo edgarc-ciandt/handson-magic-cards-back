@@ -1,11 +1,11 @@
-package cards;
+package magiccards;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CardsApplication {
+public class MagicCardsApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CardsApplication.class, args);
+        SpringApplication.run(MagicCardsApplication.class, args);
     }
 }

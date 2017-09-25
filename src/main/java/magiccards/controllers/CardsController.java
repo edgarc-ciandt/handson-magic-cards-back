@@ -1,15 +1,15 @@
-package cards.controllers;
+package magiccards.controllers;
 
-import cards.entities.Card;
-import cards.repositories.CardRepository;
+import magiccards.entities.Card;
+import magiccards.repositories.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
-//
+
 @RestController
-@RequestMapping("cards")
+@RequestMapping("magiccards")
 public class CardsController {
 
 	@Autowired
