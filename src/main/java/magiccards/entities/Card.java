@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Data
@@ -54,8 +56,12 @@ public class Card {
 	private String toughness;
 	@Column(name = "loyalty")
 	private String loyalty;
-	@Column(name = "expansionid")
-	private Integer expansionId;
+
+	// @Column(name = "expansionid")
+	@ManyToOne()
+	@JoinColumn(name = "expansionid")
+	private Expansion expansion;
+
 	@Column(name = "artistid")
 	private Integer artistId;
 	@Column(name = "flipname", columnDefinition = "text")
