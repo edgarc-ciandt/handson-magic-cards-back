@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: tcgplace-cards
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://localhost:3306/tcgplace?useSSL=false
+    username: root
+    password: root
