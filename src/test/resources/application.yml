@@ -1,0 +1,5 @@
+spring:
+  jpa:
+    database: HSQL
+    hibernate:
+      ddl-auto: create
