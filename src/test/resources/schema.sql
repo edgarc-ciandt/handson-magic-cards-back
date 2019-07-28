@@ -10,7 +10,6 @@ CREATE TABLE magiccard (
   Color int NOT NULL,
   ManaCost varchar(128) DEFAULT NULL,
   CollectionNumber smallint DEFAULT NULL,
-  ConvertedManaCost varchar(20) DEFAULT NULL,
   Rarity varchar(1) NOT NULL,
   Rules varchar(128)  NOT NULL,
   FlavorText varchar(128)  NOT NULL,
@@ -30,7 +29,6 @@ CREATE TABLE magiccard (
   FlipToughness varchar(4) DEFAULT NULL,
   FlipGathererId varchar(16) DEFAULT NULL,
   SplitManaCost varchar(128) DEFAULT NULL,
-  SplitConvertedManaCost varchar(20) DEFAULT NULL,
   PRIMARY KEY (GathererId)
 );
 
