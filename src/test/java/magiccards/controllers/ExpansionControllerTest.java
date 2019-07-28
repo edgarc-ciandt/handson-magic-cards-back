@@ -102,7 +102,7 @@ public class ExpansionControllerTest extends TestCase{
 	}
 	
 	@Test
-	public void excludeleteiExpansion() throws Exception {
+	public void excluiExpansion() throws Exception {
 		mvc.perform(delete("/expansions/1")
 				.contentType(APPLICATION_JSON))
 				.andExpect(status().isOk());
