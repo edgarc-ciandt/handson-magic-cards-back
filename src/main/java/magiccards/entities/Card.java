@@ -34,7 +34,7 @@ public class Card {
 	private String manaCost;
 	@Column(name = "collectionnumber", columnDefinition = "smallint")
 	private Integer collectionNumber;
-	@Column(name = "convertedmanacost")
+	@Column(name = "convertedmanacost", columnDefinition = "DECIMAL(19,0)")
 	private Float convertedManaCost;
 	@Column(name = "rarity", columnDefinition = "char")
 	private String rarity;
@@ -74,7 +74,7 @@ public class Card {
 	private String flipGathererId;
 	@Column(name = "splitmanacost")
 	private String splitManaCost;
-	@Column(name = "splitconvertedmanacost")
+	@Column(name = "splitconvertedmanacost", columnDefinition = "DECIMAL(19,0)")
 	private Float splitConvertedManaCost;
 
 }
