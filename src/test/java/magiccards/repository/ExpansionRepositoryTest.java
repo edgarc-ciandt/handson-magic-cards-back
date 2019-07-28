@@ -1,6 +1,9 @@
 package magiccards.repository;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import java.util.Date;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,11 +24,55 @@ public class ExpansionRepositoryTest{
 	private ExpansionRepository expansionRepository;
 	
 	@Test
-	public void teste() {
+	public void testeSave() {
+		criaExpansion();
 		Iterable<Expansion> expansions = expansionRepository.findAll();
 		
-		assertNull(expansions);
+		assertNotNull(expansions);
+	}
+	
+	@Test
+	public void testeUpdate() {
+		Expansion expansion = criaExpansion();
+		Iterable<Expansion> expansions = expansionRepository.findAll();
 		
+		assertNotNull(expansions);
+		
+		expansion.setName("expansion 2");
+		expansionRepository.save(expansion);
+		
+		Expansion expansionUpdated = expansionRepository.findOne(expansion.getExpansionId());
+		
+		assertEquals("expansion 2", expansionUpdated.getName());
+	}
+	
+	@Test
+	public void testeDelete() {
+		Expansion expansion = criaExpansion();
+		
+		Iterable<Expansion> expansions = expansionRepository.findAll();
+		
+		assertNotNull(expansions);
+		
+		expansionRepository.delete(expansion);
+		
+		expansions = expansionRepository.findAll();
+		
+		assertNotNull(expansions);
+		
+	}
+
+	private Expansion criaExpansion() {
+		Expansion expansion = new Expansion();
+		expansion.setExpansionId(1);
+		expansion.setName("expansion 1");
+		expansion.setCode("ME4");
+		expansion.setExpansionCategoryId(400);
+		expansion.setLaunchDate(new Date());
+		expansion.setLinkName("teste");
+		expansion.setPortugueseName("teste");
+		expansionRepository.save(expansion);
+		return expansion;
 	}
 
 }
